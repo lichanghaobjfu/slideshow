@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#picture-frame {
+  width: auto;
+  height: auto;
+  margin: 50px auto;
+  position: relative;
+  border: 1px solid black;
+  /* overflow: hidden; */
+  display: block;
+}
+
+img {
+  display: block;
+}
+
+#buttons {
+  display: block;
+}
+
+div {
+  display: block;
+}
+
+/* #picture-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  transition: transform 0.5s;
+} */
+/* 
+#picture-frame {
+  width: auto;
+  height: auto;
+  border: 3px solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 15px 10px;
+} */
+
+#picture-frame img {
+  position: absolute;
+  top: 0;
+  transform-origin: center;
+  height: 100%;
+  width: auto;
+  transition: transform 0.5s;
+  left: 0;
+}
+
+
+#picture-frame img:first-of-type,
+#picture-frame img:last-of-type {
+  width: 1000px;
+  height: 700px;
+  left: -1000;
+  object-fit: cover;
+}
+
+/* right: 0;
+transform-origin: right center; */
+
+#picture-frame img:nth-of-type(2n+1) {
+  right: 0;
+  width: 500px;
+  height: 700px;
+  transform-origin: right center;
+  transform: translateX(0) scaleX(-1);
+  /* transform: translateX(50%) scaleX(-1); */
+}
+
+#picture-frame img:nth-of-type(2n) {
+  left: 0;
+  width: 500px;
+  height: 700px;
+  transform-origin: left center;
+  transform: translateX(-100%) scaleX(-1);
+  /* transform: translateX(-50%); */
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#progress-bar-inner {
+  width: 0;
+  height: 100%;
+  background-color: blue;
+  transition: width 0.5s;
+}
