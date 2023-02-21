@@ -41,20 +41,33 @@ function updatePictures() {
 
   if (currentPage === 1) {
     pictures[0].style.display = 'block';
+    pictures[0].style.marginLeft = "auto";
+    pictures[0].style.marginRight = "auto";
+
   } else if (currentPage === numPictures) {
     pictures[numPictures - 1].style.display = 'block';
+    pictures[numPictures - 1].style.marginLeft = "auto";
+    pictures[numPictures - 1].style.marginRight = "auto";
   } else {
-    pictures[currentPage - 1].style.display = 'block';
-    pictures[currentPage].style.display = 'block';
+    pictures[currentPage - 1].style.display = 'inline-block';
+    pictures[currentPage].style.display = 'inline-block';
+    pictures[currentPage - 1].style.marginLeft  = "auto";
+    pictures[currentPage - 1].style.marginRight  = "auto";
+    pictures[currentPage].style.marginLeft  = "auto";
+    pictures[currentPage].style.marginRight  = "auto";
+    pictures[currentPage - 1].style.width = "50%";
+    pictures[currentPage].style.width = "50%";
 
     // If current page is odd, move it to the right
-    if (currentPage % 2 === 1) {
-      pictures[currentPage].style.transform = 'translateX(50%) scaleX(-1)';
-    }
-    // If current page is even, move it to the left
-    else {
-      pictures[currentPage - 1].style.transform = 'translateX(-50%)';
-    }
+    // if (currentPage % 2 === 1) {
+    //   // pictures[currentPage].style.display = "flex";
+    //   // pictures[currentPage].style.transform = 'translateX(50%) scaleX(-1)';
+    // }
+    // // If current page is even, move it to the left
+    // else {
+    //   // pictures[currentPage - 1].style.display = "flex"
+    //   // pictures[currentPage - 1].style.transform = 'translateX(-50%)';
+    // }
   }
 }
 
